@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Nine Five`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Thomas Albertini`,
+      summary: `Software Developer and Open Source Enthusiast.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `This blog is just a way to document my studies and experiences in the Software Development world.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      github: `thomscoder`,
     },
   },
   plugins: [
@@ -113,8 +113,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Nine Five Blog`,
+        short_name: `Nine Five`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
