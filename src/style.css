@@ -1,6 +1,7 @@
 /* CSS Custom Properties Definitions */
 
 :root {
+  --bg: #fff;
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
   --maxWidth-sm: 24rem;
@@ -62,6 +63,52 @@
   --color-accent: #d1dce5;
 }
 
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  --bg: #202020;
+  --color-primary: yellow;
+  --color-text: #fffa;
+  --color-text-light: #4f5969;
+  --color-heading: rgb(111, 224, 232);
+  --color-heading-black: rgb(111, 224, 232);
+  --color-accent: #d1dce5;
+  transition: all .5s ease;
+}
+
+
+body.dark .language-javascript{
+  background-color: #000000;
+  text-shadow: none;
+}
+
+body.dark .language-bash {
+  background-color: #000000;
+  text-shadow: none;
+}
+
+body .switcher {
+  position: absolute;
+  bottom: var(--spacing-10);
+  right: var(--spacing-5);
+}
+
+body.dark code.language-bash {
+  color: var(--color-text);
+}
+body .react-switch-bg {
+  background: black !important;
+}
+body .react-switch-bg div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sun {
+  fill: white;
+}
+.moon {
+  fill: yellow;
+}
 /* HTML elements */
 
 *,
@@ -78,9 +125,11 @@ html {
 }
 
 body {
+  background-color: var(--bg);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  transition: all .5s ease;
 }
 
 footer {

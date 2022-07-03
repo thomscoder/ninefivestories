@@ -3,15 +3,17 @@ module.exports = {
     title: `Nine Five`,
     author: {
       name: `Thomas Albertini`,
-      summary: `Software Developer and Open Source Enthusiast.`,
+      summary: `Documenting my coding journey`,
     },
     description: `This blog is just a way to document my studies and experiences in the Software Development world.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       github: `thomscoder`,
+      linkedin: 'thomas-albertini',
     },
   },
   plugins: [
+    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
