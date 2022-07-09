@@ -76,18 +76,18 @@ So, how in the hell does Javascript handle memory?
 
 <h5>Heap and Stack</h5>
 
-Javascript engines have two places where they store data: <b><em>the heap</em></b> and <b><em>the stack</em></b>
+Javascript engines have two places where they store data: <b><em>the heap</em></b> and <b><em>the stack</em></b>.
 
 We can simply define the stack as the place where static data, including method and function frames<a href="/hello-js#primitives" target="_blank" style="color:inherit;"> primitives data types</a> and pointers to objects get stored, while the memory heap is the place where the <a href="/hello-js#primitives" target="_blank" style="color:inherit;">non primitves data types</a> are stored.
 The Heap is where Garbage Collection takes place.
 
-> All variables first point to the stack. If it is not a primitive value, the stack contains a references that points to the Object in the heap.<br/><br/>
+> All variables first point to the stack. If it is not a primitive value, the stack contains a reference that points to the Object in the heap.<br/><br/>
 > 💡 - Why can I push elements in <a href="https://levelup.gitconnected.com/understanding-call-stack-and-heap-memory-in-js-e34bf8d3c3a4" target="_blank" style="color:inherit"><b>const Arrays</b></a> ?
 
 
 <h4>Garbage Collector</h4>
 
-When we write our code and create primives, objects, functions we just learned that it takes memory. So when is the cleaning performed?<br/> In Javascript the engine does all the hard work for us.
+When we write our code and create primitives, objects, functions we just learned that it takes memory. So when is the cleaning performed?<br/> In Javascript the engine does all the hard work for us.
 
 The way V8 achieves that is through the implementation of some advanced concepts. 
 
@@ -119,11 +119,11 @@ V8 splits the heap into different regions called <a href="https://v8.dev/blog/or
 - <b>Young Generation</b> - split further in <b>Nursery</b> and <b>Intermediate</b>
 - <b>Old Generation</b>
 
-Starting from the <b><em>nursery</em></b>, if an object survive a Garbage Collection it is moved into <b><em>Intermediate</em></b> generation at first and then <b><em>Old Generation</em></b> after another survival.
+Starting from the <b><em>nursery</em></b>, if an object survive a Garbage Collection it is moved into <b><em>Intermediate</em></b> generation at first and then, after another survival to <b><em>Old Generation</em></b>.
 
 But why is that?
 <h4 style="padding: 20px; font-weight: normal;">Most objects die young</h4>
-V8's generational heap is designed to exploit just that assumption about objects' lifetime, the <b><em>Generational Hypothesis</em></b>.<br/><br/>
+V8's generational heap is designed to exploit that assumption about objects' lifetime, the <b><em>Generational Hypothesis</em></b>.<br/><br/>
 
 Rememebering the concept of <b><em>Compaction</em></b> and assuming that objects are more likely to die in initial generations, then by moving only the objects that survive, V8 only pays a cost for copying that is proportional to the number of the surviving objects... and not the number of their allocations.
 
@@ -143,7 +143,7 @@ In traditional <span class="stop-the-world" style="display:inline; font-weight:b
 <h4>Conclusion</h4>
 Phew...<br/>
 I won't go deeper on how the Garbage Collection is implemented in V8 because such is a huge and complex topic and one article wouldn't be really enough. I introduced the main concepts behind V8 and how it allows us to write code without thinking too much about memory management (always keeping the best practices in mind though).
-V8 is an insanely huge piece of technologies that implements a lot of clever concepts and I cannot wait to unveil them one by one.<br/>
+V8 is an insanely huge piece of technology that implements a lot of clever concepts and I cannot wait to unveil them one by one.<br/>
 See ya in next article.
 
 
