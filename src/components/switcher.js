@@ -10,10 +10,12 @@ export default class Switcher extends React.Component {
         {({ theme, toggleTheme }) => (
             <div className="switcher">
                 <Switch
-                    checked={theme === 'dark'}
-                    checkedIcon={<Moon className="moon" />}
-                    uncheckedIcon={<Sun className="sun" />}
-                    onChange={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
+                    checked={theme === "light"}
+                    checkedIcon={<Sun className="sun" />}
+                    uncheckedIcon={<Moon className="moon" />}
+                    onChange={checked => {
+                        toggleTheme(theme === 'light' ? 'dark' : 'light')
+                    }}
                 />
             </div>
         )}

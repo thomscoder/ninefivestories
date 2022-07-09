@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import EmailListForm from "../components/newsletter"
+import Switcher from "../components/switcher"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -31,7 +33,9 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
         <footer>
+          <EmailListForm />
           <Bio />
+          <Switcher />
         </footer>
       </article>
       <nav className="blog-post-nav">

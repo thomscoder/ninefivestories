@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Nine Five`,
+    title: `Nine Five Stories`,
     author: {
       name: `Thomas Albertini`,
-      summary: `Documenting my coding journey`,
+      summary: `Documenting my coding journey.`,
     },
     description: `This blog is just a way to document my studies and experiences in the Software Development world.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://ninefive.gatsbyjs.io/`,
     social: {
       github: `thomscoder`,
       linkedin: 'thomas-albertini',
@@ -107,7 +107,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Nine Five Stories RSS Feed",
           },
         ],
       },
@@ -115,7 +115,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Nine Five Blog`,
+        name: `Nine Five Stories`,
         short_name: `Nine Five`,
         start_url: `/`,
         background_color: `#ffffff`,
@@ -123,8 +123,14 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/black.webp`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+        options: {
+          endpoint: 'https://ninefivestories.us12.list-manage.com/subscribe/post?u=1bf4e323b12a88889960f6f90&amp;id=757c30f26c',
+        },
     },
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
