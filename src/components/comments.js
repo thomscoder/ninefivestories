@@ -15,7 +15,7 @@ const utterancesTheme = (_theme) => {
 
 export default function Comments() {
     const commentsBox = useRef(null);
-    const theme = localStorage.getItem('theme') === 'dark' ? "github-dark" : "github-light";
+    const theme = typeof window !== 'undefined' && window.localStorage.getItem('theme') === 'dark' ? "github-dark" : "github-light";
 
     useEffect(() => {
         const scriptEl = document.createElement('script');
