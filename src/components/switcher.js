@@ -11,6 +11,12 @@ export default class Switcher extends React.Component {
     }
   }
 
+  componentDidMount() {
+    return typeof window !== 'undefined' && 
+      window.localStorage.getItem('theme') === 'dark' && 
+      this.setState({ checked: false });
+  }
+
   handleChange = (checked, fn)  => {
     const theme = checked ? 'light' : 'dark';
     fn(theme);
