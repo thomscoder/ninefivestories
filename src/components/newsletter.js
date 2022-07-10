@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
+import { useRef } from 'react';
 
 const EmailListForm = () => {
 
   const [email, setEmail] = useState('');
+
+  const subscribeButton = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ const EmailListForm = () => {
 
   const handleEmailChange = (event) => {
     setEmail(event.currentTarget.value);
+    subscribeButton.current.disabled = !event.currentTarget.value;
   };
 
   return (
@@ -33,7 +37,7 @@ const EmailListForm = () => {
               type="text"
               onChange={handleEmailChange}
             />
-            <button type="submit">Subscribe</button>
+            <button type="submit" ref={subscribeButton} disabled={true}>Subscribe</button>
           </div>
         </form>
     </div>

@@ -4,18 +4,30 @@ import Switch from 'react-switch';
 import { BsMoonFill as Moon, BsSunFill as Sun } from 'react-icons/bs'
 
 export default class Switcher extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      checked: true,
+    }
+  }
+
+  handleChange = (checked, fn)  => {
+    const theme = checked ? 'light' : 'dark';
+    fn(theme)
+    const themeChanged = new CustomEvent('theme-change', {detail: {theme}});
+    document.dispatchEvent(themeChanged);
+  }
+
   render() {
     return (
       <ThemeToggler>
         {({ theme, toggleTheme }) => (
             <div className="switcher">
                 <Switch
-                    checked={theme === "light"}
-                    checkedIcon={<Sun className="sun" />}
-                    uncheckedIcon={<Moon className="moon" />}
-                    onChange={checked => {
-                        toggleTheme(theme === 'light' ? 'dark' : 'light')
-                    }}
+                  checked={theme === "light"}
+                  checkedIcon={<Sun className="sun" />}
+                  uncheckedIcon={<Moon className="moon" />}
+                  onChange={(checked) => this.handleChange(checked, toggleTheme)}
                 />
             </div>
         )}
