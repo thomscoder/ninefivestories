@@ -13,7 +13,8 @@ export default class Switcher extends React.Component {
 
   handleChange = (checked, fn)  => {
     const theme = checked ? 'light' : 'dark';
-    fn(theme)
+    fn(theme);
+    this.setState({ checked });
     const themeChanged = new CustomEvent('theme-change', {detail: {theme}});
     document.dispatchEvent(themeChanged);
   }
@@ -24,7 +25,7 @@ export default class Switcher extends React.Component {
         {({ theme, toggleTheme }) => (
             <div className="switcher">
                 <Switch
-                  checked={theme === "light"}
+                  checked={this.state.checked}
                   checkedIcon={<Sun className="sun" />}
                   uncheckedIcon={<Moon className="moon" />}
                   onChange={(checked) => this.handleChange(checked, toggleTheme)}
