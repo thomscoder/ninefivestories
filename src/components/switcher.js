@@ -7,14 +7,14 @@ export default class Switcher extends React.Component {
   constructor() {
     super();
     this.state = {
-      checked: true,
+      checked: false,
     }
   }
 
   componentDidMount() {
     return typeof window !== 'undefined' && 
-      window.localStorage.getItem('theme') === 'dark' && 
-      this.setState({ checked: false });
+      window.localStorage.getItem('theme') === 'light' && 
+      this.setState({ checked: true });
   }
 
   handleChange = (checked, fn)  => {
